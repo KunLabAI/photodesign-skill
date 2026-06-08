@@ -21,7 +21,7 @@
 - 📷 **器材参数注入** — 将真实相机、镜头、光圈参数融入提示词，提升画面质感
 - 🎬 **多风格覆盖** — 从商业人像到电影感、胶片复古、微距特写等多种风格
 - 🎨 **智能意图匹配** — 根据设计意图自动推荐最佳器材组合
-- 📝 **完整模板库** — 25+ 套可直接使用的专业摄影提示词模板
+- 📝 **结构化案例库** — 53 套可检索、可替换变量的摄影级提示词案例配方
 
 ---
 
@@ -48,9 +48,9 @@
 # 克隆本仓库
 git clone https://github.com/KunLabAI/photodesign-skill.git
 
-# 复制 Skill 文件到 KunFlix Skills 目录
-cp photodesign-skill/SKILL.md <your-kunflix-path>/backend/skills/photography_scene_design/SKILL.md
-cp -r photodesign-skill/references <your-kunflix-path>/backend/skills/photography_scene_design/
+# 复制 Skill 文件到 KunFlix Skills 目录（中文版）
+cp photodesign-skill/skill_zh/SKILL.md <your-kunflix-path>/backend/skills/photography_scene_design/SKILL.md
+cp -r photodesign-skill/skill_zh/references <your-kunflix-path>/backend/skills/photography_scene_design/
 ```
 
 ### 在其他 Agent 系统中使用
@@ -67,13 +67,17 @@ cp -r photodesign-skill/references <your-kunflix-path>/backend/skills/photograph
 ```
 photodesign-skill/
 ├── skill_zh/                            # 中文版
-│   ├── SKILL.md                         # 核心 Skill 文件（器材速查 + 快速指南）
+│   ├── SKILL.md                         # 核心 Skill 文件（器材速查 + 案例入口）
 │   └── references/
-│       └── full_photography_guide.md    # 完整摄影器材参考手册（25套模板）
+│       ├── full_photography_guide.md    # 完整摄影器材参考手册（25套模板）
+│       ├── case_index.md                # 结构化案例索引
+│       └── cases_*.md                   # 53套案例配方
 ├── skill_en/                            # 英文版
-│   ├── SKILL.md                         # Core Skill file (equipment quick ref + guide)
+│   ├── SKILL.md                         # Core Skill file (equipment quick ref + case entry)
 │   └── references/
-│       └── full_photography_guide.md    # Full photography equipment reference (25 templates)
+│       ├── full_photography_guide.md    # Full photography equipment reference (25 templates)
+│       ├── case_index.md                # Structured case index
+│       └── cases_*.md                   # 53 case recipes
 ├── LICENSE                              # MIT License
 ├── README.md                            # 中文说明
 └── README_EN.md                         # English README
@@ -91,7 +95,7 @@ photodesign-skill/
 | 镜头品牌速查 | Zeiss、Leica、Canon L、Nikon S、Sony GM、Sigma Art、Voigtlander、Helios 等 |
 | 焦距详解 | 14mm-400mm 全焦段适用场景与透视效果 |
 | 光圈详解 | f/1.0-f/22 景深控制与焦外风格 |
-| 提示词模板库 | 25+ 套可直接使用的专业模板 |
+| 结构化案例库 | 53 套带适用场景、器材、参数、画面结果、变量和避免项的案例配方 |
 | 意图匹配指南 | 根据设计意图快速选定器材组合 |
 
 ### 示例：从意图到提示词
@@ -160,7 +164,7 @@ Fork → Branch → Commit → Push → Pull Request
 
 ## 📄 许可证
 
-本项目基于 [MIT License](./LICENSE) 开源。
+本项目基于 [AGPL3.0](./LICENSE) 开源。
 
 Copyright © 2026 [KunLabAI](https://github.com/KunLabAI)
 

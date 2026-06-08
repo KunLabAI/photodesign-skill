@@ -1,8 +1,6 @@
 ---
-name: Photography_Scene_Design
-description: "Professional photography equipment and parameter guide for AI image generation of characters, props, and scenes. Covers mainstream camera bodies, lens brands, focal lengths, and apertures. Compatible with GPT-image-2, nanobanana2, nanobananapro, seedream 5.0 and other text-to-image/image-to-image models."
-metadata:
-  builtin_skill_version: "1.0"
+name: photography-scene-design
+description: "Professional photography equipment, parameter, and case recipe guide for AI image generation of characters, props, and scenes. Use when converting camera bodies, lens brands, focal lengths, apertures, lighting, depth of field, bokeh, film looks, or cinema lens aesthetics into prompts for GPT-image-2, nanobanana2, nanobananapro, seedream 5.0, and other text-to-image/image-to-image models."
 ---
 
 # Photography Scene Design (Character · Props · Scene)
@@ -22,6 +20,7 @@ metadata:
 2. **Parameter Coordination**: Focal length, aperture, and camera body must be reasonably matched — avoid impossible combinations
 3. **One Set Per Prompt**: Specify one set of equipment parameters per prompt, don't mix multiple sets
 4. **Model Adaptation**: Adapt equipment descriptions as natural language for different image models (GPT-image-2, nanobanana series, seedream 5.0)
+5. **Use Case Recipes First**: For concrete generation tasks, check the case index, choose the closest recipe, then replace subject, scene, lighting, and style variables
 
 ---
 
@@ -218,16 +217,21 @@ Incorporate equipment parameters when generating prompts:
 - This skill can be combined with a "Cinema Lens Language" skill: this one controls static image quality, while that one controls dynamic camera movement
 - Aperture and focal length pairings should be realistic: ultra-wide f/1.2 lenses barely exist in reality
 - seedream 5.0 responds well to photography style keywords — consider adding `professional photography` or `cinematic still` at the beginning of prompts for enhanced results
+- In case recipes, subjects, professions, materials, and scenes are replaceable; preserve the relationship between equipment, focal length, aperture, and intended image result
 
 ---
 
-## Full Equipment Prompt Reference
+## References and Case Library
 
 The quick reference tables above provide rapid equipment selection. For **detailed parameter descriptions** and **ready-to-use complete prompt templates** for each equipment combination, please refer to:
 
 👉 [Full Photography Equipment Reference Manual](./references/full_photography_guide.md)
 
+When matching a concrete intent to a reusable recipe, start with:
+
+👉 [Structured Case Index](./references/case_index.md)
+
 Usage:
-1. Select equipment combination from quick reference tables based on design intent
-2. Open the full reference manual for detailed prompt templates of the selected combination
-3. Fine-tune based on specific character/prop/scene requirements and incorporate into generation prompts
+1. Select equipment from the quick tables or case index based on design intent
+2. Open the relevant case file and read applicability, image result, replaceable variables, and avoid notes
+3. Fine-tune based on the specific character, prop, or scene requirements and incorporate into the generation prompt

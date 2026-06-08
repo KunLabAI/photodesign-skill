@@ -21,7 +21,7 @@ This Skill is designed for ✨**document-driven Agent systems**✨, enabling AI 
 - 📷 **Equipment Parameter Injection** — Incorporate real camera, lens, and aperture parameters into prompts to enhance image quality
 - 🎬 **Multi-Style Coverage** — From commercial portraits to cinematic, vintage film, macro close-ups, and more
 - 🎨 **Smart Intent Matching** — Automatically recommend the best equipment combo based on design intent
-- 📝 **Complete Template Library** — 25+ ready-to-use professional photography prompt templates
+- 📝 **Structured Case Library** — 53 searchable photography-grade prompt recipes with replaceable variables
 
 ---
 
@@ -67,13 +67,17 @@ This Skill uses standard Markdown format and can be easily integrated into any d
 ```
 photodesign-skill/
 ├── skill_zh/                            # Chinese version
-│   ├── SKILL.md                         # Core Skill file (equipment quick ref + guide)
+│   ├── SKILL.md                         # Core Skill file (equipment quick ref + case entry)
 │   └── references/
-│       └── full_photography_guide.md    # Full photography equipment reference (25 templates)
+│       ├── full_photography_guide.md    # Full photography equipment reference (25 templates)
+│       ├── case_index.md                # Structured case index
+│       └── cases_*.md                   # 53 case recipes
 ├── skill_en/                            # English version
-│   ├── SKILL.md                         # Core Skill file (equipment quick ref + guide)
+│   ├── SKILL.md                         # Core Skill file (equipment quick ref + case entry)
 │   └── references/
-│       └── full_photography_guide.md    # Full photography equipment reference (25 templates)
+│       ├── full_photography_guide.md    # Full photography equipment reference (25 templates)
+│       ├── case_index.md                # Structured case index
+│       └── cases_*.md                   # 53 case recipes
 ├── LICENSE                              # MIT License
 ├── README.md                            # 中文说明
 └── README_EN.md                         # English README (this file)
@@ -91,7 +95,7 @@ photodesign-skill/
 | Lens Brand Reference | Zeiss, Leica, Canon L, Nikon S, Sony GM, Sigma Art, Voigtlander, Helios, etc. |
 | Focal Length Guide | Full focal range 14mm-400mm with applicable scenes and perspective effects |
 | Aperture Guide | f/1.0-f/22 depth of field control and bokeh styles |
-| Prompt Template Library | 25+ ready-to-use professional templates |
+| Structured Case Library | 53 case recipes with applicability, equipment, settings, image result, variables, and avoid notes |
 | Intent Matching Guide | Quickly select equipment combos based on design intent |
 
 ### Example: From Intent to Prompt
@@ -160,7 +164,7 @@ Fork → Branch → Commit → Push → Pull Request
 
 ## 📄 License
 
-This project is open-sourced under the [MIT License](./LICENSE).
+This project is open-sourced under the [AGPL3.0](./LICENSE).
 
 Copyright © 2026 [KunLabAI](https://github.com/KunLabAI)
 
