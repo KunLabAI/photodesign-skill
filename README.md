@@ -2,7 +2,7 @@
 
 > 专为 AI 图像生成打造的专业摄影器材与参数指南，适用于文档驱动的 Agent 系统。
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL3.0-yellow.svg)](./LICENSE)
 [![Models](https://img.shields.io/badge/Models-GPT--image--2%20%7C%20nanobanana2%20%7C%20nanobananapro%20%7C%20seedream5.0-blue)](#%E6%94%AF%E6%8C%81%E6%A8%A1%E5%9E%8B)
 [![KunFlix](https://img.shields.io/badge/Platform-KunFlix-purple)](https://github.com/KunLabAI/KunFlix)
 
@@ -95,8 +95,10 @@ photodesign-skill/
 | 镜头品牌速查 | Zeiss、Leica、Canon L、Nikon S、Sony GM、Sigma Art、Voigtlander、Helios 等 |
 | 焦距详解 | 14mm-400mm 全焦段适用场景与透视效果 |
 | 光圈详解 | f/1.0-f/22 景深控制与焦外风格 |
-| 结构化案例库 | 53 套带适用场景、器材、参数、画面结果、变量和避免项的案例配方 |
-| 意图匹配指南 | 根据设计意图快速选定器材组合 |
+| 色温详解 | 2000K-8000K+ 色温速查、选择指南与白平衡配合 |
+| 光照角度详解 | 0°-180° 光照角度速查、布光模式（伦勃朗、蝶形光、分割光等） |
+| 结构化案例库 | 53 套带适用场景、器材、参数（含色温与光照角度）、画面结果、变量和避免项的案例配方 |
+| 意图匹配指南 | 根据设计意图快速选定器材组合、色温与光照角度 |
 
 ### 示例：从意图到提示词
 

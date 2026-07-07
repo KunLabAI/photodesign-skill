@@ -2,7 +2,7 @@
 
 > Professional photography equipment & parameter guide for AI image generation, designed for document-driven Agent systems.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL3.0-yellow.svg)](./LICENSE)
 [![Models](https://img.shields.io/badge/Models-GPT--image--2%20%7C%20nanobanana2%20%7C%20nanobananapro%20%7C%20seedream5.0-blue)](#supported-models)
 [![KunFlix](https://img.shields.io/badge/Platform-KunFlix-purple)](https://github.com/KunLabAI/KunFlix)
 
@@ -95,8 +95,10 @@ photodesign-skill/
 | Lens Brand Reference | Zeiss, Leica, Canon L, Nikon S, Sony GM, Sigma Art, Voigtlander, Helios, etc. |
 | Focal Length Guide | Full focal range 14mm-400mm with applicable scenes and perspective effects |
 | Aperture Guide | f/1.0-f/22 depth of field control and bokeh styles |
-| Structured Case Library | 53 case recipes with applicability, equipment, settings, image result, variables, and avoid notes |
-| Intent Matching Guide | Quickly select equipment combos based on design intent |
+| Color Temperature Guide | 2000K-8000K+ color temperature reference, selection guide, and white balance coordination |
+| Lighting Angle Guide | 0°-180° lighting angle reference, lighting setups (Rembrandt, butterfly, split, etc.) |
+| Structured Case Library | 53 case recipes with applicability, equipment, settings (incl. color temp & lighting angle), image result, variables, and avoid notes |
+| Intent Matching Guide | Quickly select equipment combos, color temperature, and lighting angle based on design intent |
 
 ### Example: From Intent to Prompt
 

@@ -1,6 +1,6 @@
 ---
 name: photography-scene-design
-description: "专业摄影器材、参数和案例配方指南，用于角色、道具、场景的 AI 图像生成。使用于需要把相机机身、镜头品牌、焦距、光圈、布光、景深、焦外、胶片或电影镜头质感转写成提示词的任务，适用于 GPT-image-2、nanobanana2、nanobananapro、seedream 5.0 等文生图/图生图模型。"
+description: "专业摄影器材、参数和案例配方指南，用于角色、道具、场景的 AI 图像生成。使用于需要把相机机身、镜头品牌、焦距、光圈、色温、光照角度、布光模式、景深、焦外、胶片或电影镜头质感转写成提示词的任务，适用于 GPT-image-2、nanobanana2、nanobananapro、seedream 5.0 等文生图/图生图模型。"
 ---
 
 # 摄影场景设计（角色·道具·场景）
@@ -17,10 +17,12 @@ description: "专业摄影器材、参数和案例配方指南，用于角色、
 ## 核心原则
 
 1. **器材服务画面**：选择器材参数是为了实现特定视觉效果，不是堆砌品牌名
-2. **参数协调**：焦距、光圈、机身三者搭配需合理，避免不可能的组合
+2. **参数协调**：焦距、光圈、机身、色温、光照角度五者搭配需合理，避免不可能的组合
 3. **一句一器材**：提示词中明确一套器材参数即可，不混用多套
 4. **适配模型特性**：针对不同图像模型（GPT-image-2、nanobanana 系列、seedream 5.0），器材描述融入自然语言
-5. **优先使用案例配方**：遇到具体生成需求时，先查案例索引选择相近配方，再替换主体、场景、光线和风格变量
+5. **优先使用案例配方**：遇到具体生成需求时，先查案例索引选择相近配方，再替换主体、场景、光线、色温和风格变量
+6. **色温匹配情绪**：暖色温（2700-3400K）传达亲密温暖，冷色温（6500-7500K）传达疏离清冷，根据画面情绪选择
+7. **光照角度塑造立体感**：正面光平柔、侧光立体、逆光梦幻，光照角度决定主体的体积感和氛围
 
 ---
 
@@ -135,68 +137,148 @@ description: "专业摄影器材、参数和案例配方指南，用于角色、
 
 ---
 
-## 五、提示词模板库
+## 五、色温详解
+
+### 色温速查表
+
+| 色温值 | 名称 | 视觉效果 | 适用场景 |
+|--------|------|----------|----------|
+| 2000K | 烛光/火光 | 极暖橙红色调 | 温馨室内、烛光、篝火、复古暖调 |
+| 2700-3200K | 钨丝灯/暖白 | 暖黄色调 | 室内暖光、酒吧、复古场景、黄昏室内 |
+| 3400K | 摄影钨丝灯 | 暖白色调 | 影棚暖色布光、电影感室内 |
+| 4000-4500K | 荧光灯/晨暮光 | 中性偏暖 | 办公场景、清晨/黄昏过渡、自然室内 |
+| 5000-5500K | 日光/闪光灯 | 标准白色 | 影棚标准、商业产品、中性肤色还原 |
+| 5600K | 日光白平衡 | 自然白色 | 户外日光、标准商业摄影、准确色彩 |
+| 6000-6500K | 阴天/阴影 | 微冷色调 | 阴天户外、阴影区域、清冷情绪 |
+| 7000-7500K | 阴影/冷调 | 冷蓝白色调 | 雪景、冷调情绪、科幻场景、极地 |
+| 8000K+ | 极冷调 | 明显蓝色调 | 极地夜景、超现实冷调、赛博朋克 |
+
+### 色温选择指南
+
+| 设计目标 | 推荐色温 | 原因 |
+|----------|----------|------|
+| 温暖亲密人像 | 2700-3200K | 暖色营造亲密感，肤色偏暖讨喜 |
+| 自然写实肤色 | 5000-5500K | 接近标准日光，肤色还原最准确 |
+| 电影叙事暖调 | 3200-3400K | 模拟室内钨丝灯，电影感温暖 |
+| 清冷孤独情绪 | 6500-7500K | 冷调传达疏离感、忧郁氛围 |
+| 赛博朋克/科幻 | 4000K 混合 7000K+ | 暖冷混合光源制造科技感冲突 |
+| 雪景/极地冷调 | 7000-7500K | 强化环境冷感，白色层次分明 |
+| 黄金时刻户外 | 3200-4000K | 模拟日落低色温暖光 |
+| 商业产品准确色 | 5000-5500K | 中性色温确保色彩无偏移 |
+
+### 色温与白平衡配合
+
+- **匹配光源色温**：将白平衡设为与环境光源一致的色温，获得准确色彩还原
+- **刻意偏暖**：白平衡设高于实际光源色温（如日光下设 6500K），画面整体偏暖
+- **刻意偏冷**：白平衡设低于实际光源色温（如钨丝灯下设 3200K），画面整体偏冷
+- **混合光源**：暖冷光源同时存在时（如室内钨丝灯+窗外日光），选择强调一方，保留另一方色温差营造层次
+
+---
+
+## 六、光照角度详解
+
+### 光照角度速查表
+
+| 角度 | 名称 | 视觉效果 | 适用场景 |
+|------|------|----------|----------|
+| 0° 正面光 | 平光（Front Light） | 面部均匀照亮、阴影极少 | 美妆特写、证件照、清新高调人像 |
+| 15-30° | 蝶形光/蝴蝶光（Butterfly/Paramount） | 鼻下蝶形阴影、颧骨高光突出 | 时尚女性肖像、glamour 风格、复古好莱坞 |
+| 30-45° | 伦勃朗光（Rembrandt） | 面颊倒三角光、立体感强烈 | 戏剧人像、电影感肖像、油画质感 |
+| 45-60° | 环形光（Loop Lighting） | 鼻影短小不连通、自然立体 | 通用商业人像、自然感肖像、婚纱 |
+| 90° 侧光 | 分割光/侧光（Split/Side Light） | 面部明暗对分、雕塑感 | 男性硬朗肖像、低调情绪、产品质感 |
+| 120-135° | 侧逆光/轮廓光（Rim/Back-Side） | 边缘轮廓光勾勒、正面偏暗 | 发丝光、主体与背景分离、氛围肖像 |
+| 180° 逆光 | 逆光（Backlight） | 主体边缘光晕、正面需补光 | 剪影、梦幻光晕、透光材质、逆光人像 |
+| 顶部光 | 顶光（Top Light） | 眼窝深影、下方阴影重 | 正午户外、舞台顶光、戏剧压迫感 |
+| 底部光 | 底光（Under Light） | 不自然、恐怖感 | 恐怖题材、戏剧效果、特殊照明 |
+
+### 光照角度选择指南
+
+| 设计目标 | 推荐角度 | 原因 |
+|----------|----------|------|
+| 柔美无瑕美妆 | 0° 正面光 + 大柔光 | 均匀照明消除瑕疵，皮肤干净 |
+| 时尚魅力肖像 | 15-30° 蝶形光 | 颧骨高光立体，鼻影优雅 |
+| 电影叙事立体感 | 30-45° 伦勃朗光 | 面部三角光创造戏剧深度 |
+| 自然通用商业 | 45-60° 环形光 | 立体但不极端，适用面广 |
+| 硬朗男性/反英雄 | 90° 侧光 | 明暗分割强化骨骼和质感 |
+| 发丝轮廓分离 | 120-135° 侧逆光 | 轮廓光将主体从背景剥离 |
+| 梦幻逆光氛围 | 180° 逆光 | 光晕、透光感、浪漫氛围 |
+| 产品材质质感 | 45-90° 侧光/侧逆光 | 斜射光突显表面纹理和浮雕 |
+
+### 布光模式速查
+
+| 布光模式 | 构成 | 适用场景 |
+|----------|------|----------|
+| 三点布光 | 主光 + 辅光 + 轮廓光 | 通用商业、人像、产品 |
+| 伦勃朗布光 | 45°主光 + 弱补光 | 戏剧人像、电影感 |
+| 蝶形光 | 正高位主光 + 下方反光 | 时尚、glamour、美妆 |
+| 分割布光 | 90°单侧主光 | 男性肖像、低调情绪 |
+| 蛤壳光 | 上方主光 + 下方反光板 | 美妆、护肤、柔和无瑕 |
+| 全暗调 | 单光源无补光 | 低调肖像、黑色背景产品 |
+
+---
+
+## 七、提示词模板库
 
 ### 角色设计——人像特写
 ```
-Shot on Canon EOS R5 with RF 85mm f/1.2L USM at f/1.4, a young woman with silver hair gazes into the lens, soft window light illuminating her face, extremely shallow depth of field with creamy bokeh dissolving the background into warm golden tones, skin texture and iris details rendered with exceptional clarity.
+Shot on Canon EOS R5 with RF 85mm f/1.2L USM at f/1.4, 3200K warm color temperature, 45° loop lighting, a young woman with silver hair gazes into the lens, soft window light illuminating her face, extremely shallow depth of field with creamy bokeh dissolving the background into warm golden tones, skin texture and iris details rendered with exceptional clarity.
 ```
 
 ### 角色设计——全身立绘
 ```
-Captured with Sony A7R V and Sigma 35mm f/1.4 Art at f/2.8, a cyberpunk warrior stands in a rain-soaked neon alley, full body visible from head to boots, ambient neon reflections on wet surfaces, medium depth of field keeping the character sharp while the background glows with colorful bokeh.
+Captured with Sony A7R V and Sigma 35mm f/1.4 Art at f/2.8, mixed 4000K/7000K neon color temperature, 135° side-back rim lighting, a cyberpunk warrior stands in a rain-soaked neon alley, full body visible from head to boots, ambient neon reflections on wet surfaces, medium depth of field keeping the character sharp while the background glows with colorful bokeh.
 ```
 
 ### 角色设计——电影感肖像
 ```
-Filmed on ARRI ALEXA 35 with Cooke S7/i 75mm T2.0, cinematic portrait of a detective in a dimly lit office, warm practical lighting from a desk lamp, the Cooke Look rendering skin with gentle halation and smooth tonal transitions, shallow depth of field isolating the subject from the noir background.
+Filmed on ARRI ALEXA 35 with Cooke S7/i 75mm T2.0, 3200K warm practical color temperature, 120° Rembrandt lighting, cinematic portrait of a detective in a dimly lit office, warm practical lighting from a desk lamp, the Cooke Look rendering skin with gentle halation and smooth tonal transitions, shallow depth of field isolating the subject from the noir background.
 ```
 
 ### 道具设计——细节特写
 ```
-Shot on Hasselblad X2D 100C with Zeiss Otus 100mm Macro at f/4, extreme close-up of an ornate mechanical pocket watch, every gear tooth and engraving rendered in extraordinary detail, dark velvet background completely dissolved into pure black, studio rim lighting accentuating metallic textures.
+Shot on Hasselblad X2D 100C with Zeiss Otus 100mm Macro at f/4, 5500K studio color temperature, 120° rim lighting, extreme close-up of an ornate mechanical pocket watch, every gear tooth and engraving rendered in extraordinary detail, dark velvet background completely dissolved into pure black, studio rim lighting accentuating metallic textures.
 ```
 
 ### 场景设计——宏大环境
 ```
-Captured with Nikon Z8 and Nikkor Z 14-24mm f/2.8S at 16mm f/8, a vast cyberpunk cityscape at twilight, towering megastructures receding into atmospheric haze, deep depth of field rendering every architectural detail from foreground market stalls to distant skyscrapers, dramatic perspective lines converging at the horizon.
+Captured with Nikon Z8 and Nikkor Z 14-24mm f/2.8S at 16mm f/8, 4000K twilight color temperature, 15° low-angle sunlight, a vast cyberpunk cityscape at twilight, towering megastructures receding into atmospheric haze, deep depth of field rendering every architectural detail from foreground market stalls to distant skyscrapers, dramatic perspective lines converging at the horizon.
 ```
 
 ### 场景设计——氛围内景
 ```
-Shot on Fujifilm GFX 100S with GF 80mm f/1.7 at f/2.0, a quiet Japanese tea room in late afternoon, golden hour light streaming through shoji screens, medium format rendering delivering exceptional tonal gradation and three-dimensionality, gentle bokeh on background elements.
+Shot on Fujifilm GFX 100S with GF 80mm f/1.7 at f/2.0, 3400K warm golden-hour color temperature, 45° side window light, a quiet Japanese tea room in late afternoon, golden hour light streaming through shoji screens, medium format rendering delivering exceptional tonal gradation and three-dimensionality, gentle bokeh on background elements.
 ```
 
 ### 复古胶片——角色写真
 ```
-Shot on Contax T2 with Zeiss Sonnar 38mm f/2.8, Kodak Portra 400 film, a woman in a summer dress walking through a sunlit garden, characteristic warm color palette with soft highlight rolloff, natural film grain adding organic texture, the timeless Contax rendering style.
+Shot on Contax T2 with Zeiss Sonnar 38mm f/2.8, 4000K warm daylight color temperature, 60° natural available light, Kodak Portra 400 film, a woman in a summer dress walking through a sunlit garden, characteristic warm color palette with soft highlight rolloff, natural film grain adding organic texture, the timeless Contax rendering style.
 ```
 
 ### 产品/道具——商业级
 ```
-Photographed with Phase One IQ4 150MP and Schneider 120mm LS f/4 Macro, a luxury perfume bottle on reflective black acrylic surface, 150 megapixel resolution capturing every crystal facet and light refraction, controlled studio lighting with precise specular highlights, absolute color accuracy.
+Photographed with Phase One IQ4 150MP and Schneider 120mm LS f/4 Macro, 5500K studio standard color temperature, 90° side lighting, a luxury perfume bottle on reflective black acrylic surface, 150 megapixel resolution capturing every crystal facet and light refraction, controlled studio lighting with precise specular highlights, absolute color accuracy.
 ```
 
 ---
 
-## 六、快速意图匹配指南
+## 八、快速意图匹配指南
 
-| 设计意图 | 推荐器材组合 |
-|----------|--------------|
-| 梦幻人像/氛围感 | Canon R5 + RF 85/1.2L @ f/1.2 |
-| 锐利角色立绘 | Sony A7RV + 85GM II @ f/1.8 |
-| 电影叙事感 | ARRI ALEXA 35 + Cooke 75mm T2.0 |
-| 胶片复古风 | Contax T2 / Mamiya RZ67 + Portra 400 |
-| 道具微距细节 | Hasselblad X2D + Zeiss 100mm Macro |
-| 宏大场景 | Nikon Z8 + 14-24/2.8S @ f/8 |
-| 德味人文 | Leica M11 + Summilux 50/1.4 |
-| 日系清新 | Fujifilm X-T5 + 56/1.2 (Classic Chrome) |
-| 科幻/高科技 | RED V-RAPTOR + Sigma 35 Art |
-| 奇幻/戏剧性 | Petzval 85/2.2（旋涡焦外） |
+| 设计意图 | 推荐器材组合 | 推荐色温 | 推荐光照角度 |
+|----------|--------------|----------|--------------|
+| 梦幻人像/氛围感 | Canon R5 + RF 85/1.2L @ f/1.2 | 3200K 暖 | 180° 逆光或 45° 环形光 |
+| 锐利角色立绘 | Sony A7RV + 85GM II @ f/1.8 | 5500K 标准 | 45° 环形光 |
+| 电影叙事感 | ARRI ALEXA 35 + Cooke 75mm T2.0 | 3200K 暖 | 30-45° 伦勃朗光 |
+| 胶片复古风 | Contax T2 / Mamiya RZ67 + Portra 400 | 4000K 暖白 | 60° 自然光 |
+| 道具微距细节 | Hasselblad X2D + Zeiss 100mm Macro | 5500K 标准 | 120° 侧逆光 |
+| 宏大场景 | Nikon Z8 + 14-24/2.8S @ f/8 | 4000K 暮光 | 15° 低角度日光 |
+| 德味人文 | Leica M11 + Summilux 50/1.4 | 5000K 日光 | 45-60° 自然侧光 |
+| 日系清新 | Fujifilm X-T5 + 56/1.2 (Classic Chrome) | 5500K 日光 | 45° 窗光 |
+| 科幻/高科技 | RED V-RAPTOR + Sigma 35 Art | 4000K/7000K 混合 | 90° 顶光+侧光 |
+| 奇幻/戏剧性 | Petzval 85/2.2（旋涡焦外） | 3200K 暖 | 180° 舞台逆光 |
 
 ---
 
-## 七、与图像模型集成方式
+## 九、与图像模型集成方式
 
 在生成提示词时融入器材参数：
 
@@ -207,9 +289,9 @@ Photographed with Phase One IQ4 150MP and Schneider 120mm LS f/4 Macro, a luxury
    - 示例：`shot on Hasselblad medium format, 80mm lens at f/2, cinematic lighting, ultra-detailed skin texture`
 
 3. **seedream 5.0**：适合把摄影风格关键词、器材、布光和景深合并成完整画质描述
-   - 示例：`professional photography, Canon EOS R5, 85mm f/1.2L lens, f/1.4 aperture, natural window light, extremely shallow depth of field, creamy bokeh, warm golden tones, high detail skin texture`
+   - 示例：`professional photography, Canon EOS R5, 85mm f/1.2L lens, f/1.4 aperture, 3200K warm color temperature, 45° loop lighting, natural window light, extremely shallow depth of field, creamy bokeh, warm golden tones, high detail skin texture`
 
-4. **通用格式**：`[器材信息] + [主体描述] + [光线环境] + [景深/焦外描述]`
+4. **通用格式**：`[器材信息] + [色温] + [光照角度] + [主体描述] + [光线环境] + [景深/焦外描述]`
 
 ### 注意事项
 
